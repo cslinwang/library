@@ -58,6 +58,7 @@ public class BookController {
     public ModelAndView allBook(){
         ArrayList<Book> books=bookService.getAllBooks();
         ModelAndView modelAndView=new ModelAndView("admin_books");
+        modelAndView.addObject("count",books.size());
         modelAndView.addObject("books",books);
         return modelAndView;
     }

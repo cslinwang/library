@@ -4,7 +4,15 @@ public class Admin {
 
     private int adminId;
     private String password;
+    private String state;
 
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
 
     public void setPassword(String password) {
         this.password = password;

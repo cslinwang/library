@@ -9,8 +9,8 @@
 1. *git clone https://github.com/withstars/Books-Management-System* <br/>
 	*cd  Books-Management-System*<br/>
 2. 导入并配置数据库.
-3. 下载依赖,启动Jetty服务,默认端口号`9000`.
-4. 进入 http://localhost:9000
+3. 下载依赖,启动Jetty服务,默认端口号`8080`.
+4. 进入 http://localhost:8080
 ### 说明
 1. 如果使用该项目出现问题，请联系我 withstars@126.com
 2. 如果该项目对您有帮助,请star鼓励我

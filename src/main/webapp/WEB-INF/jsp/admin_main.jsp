@@ -66,7 +66,7 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="lendlist.html">借还日志</a></li>
+                        <li><a href="lendlist.html">借还日志</a></li><li><a href="lendlistcount.html">统计借阅</a></li>
                     </ul>
                 </li>
                 <li >

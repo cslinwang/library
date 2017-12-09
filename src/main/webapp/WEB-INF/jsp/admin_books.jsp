@@ -56,7 +56,7 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="lendlist.html">借还日志</a></li>
+                        <li><a href="lendlist.html">借还日志</a></li><li><a href="lendlistcount.html">统计借阅</a></li>
                     </ul>
                 </li>
                 <li >
@@ -117,6 +117,14 @@
 </c:if>
 </div>
 <div class="panel panel-default" style="width: 90%;margin-left: 5%">
+    <div class="panel-heading" style="background-color: #fff">
+        <h3 class="panel-title">
+            全部图书
+        </h3>
+    </div>
+    <div class="panel-body">
+        统计藏书&nbsp&nbsp&nbsp${count}&nbsp&nbsp&nbsp册
+    </div>
     <div class="panel-heading" style="background-color: #fff">
         <h3 class="panel-title">
             全部图书

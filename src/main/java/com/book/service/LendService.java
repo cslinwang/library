@@ -31,4 +31,7 @@ public class LendService {
         return lendDao.myLendList(readerId);
     }
 
+    public int lendListCount(){
+        return lendDao.lendListCount();
+    }
 }

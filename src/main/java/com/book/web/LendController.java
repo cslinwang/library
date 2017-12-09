@@ -72,6 +72,17 @@ public class LendController {
         modelAndView.addObject("list",lendService.lendList());
         return modelAndView;
     }
+
+
+    @RequestMapping("/ lendlistcount.html")
+    public ModelAndView lendListCount(){
+
+        ModelAndView modelAndView=new ModelAndView("admin_lend_list_count");
+        modelAndView.addObject("list",lendService.lendList());
+        int count = lendService.lendListCount();
+        modelAndView.addObject("count",count);
+        return modelAndView;
+    }
     @RequestMapping("/mylend.html")
     public ModelAndView myLend(HttpServletRequest request){
         ReaderCard readerCard=(ReaderCard) request.getSession().getAttribute("readercard");
