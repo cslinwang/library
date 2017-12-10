@@ -43,6 +43,11 @@
                     </a>
                 </li>
                 <li >
+                    <a href="addjg.html" >
+                        添加荐购
+                    </a>
+                </li>
+                <li >
                     <a href="reader_repasswd.html" >
                         密码修改
                     </a>

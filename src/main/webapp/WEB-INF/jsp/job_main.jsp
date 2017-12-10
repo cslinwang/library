@@ -58,6 +58,15 @@
                         <li><a href="lendlist.html">借还日志</a></li><li><a href="lendlistcount.html">统计借阅</a></li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        荐购管理
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="alljgs.html">荐购列表</a></li>
+                    </ul>
+                </li>
                 <li >
                     <a href="admin_repasswd.html" >
                         密码修改

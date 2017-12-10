@@ -73,7 +73,7 @@ public class LendController {
     }
 
     @RequestMapping("/returnbook1.html")
-    public String bookReturn(HttpServletRequest request,RedirectAttributes redirectAttributes){
+    public String bookReturn1(HttpServletRequest request,RedirectAttributes redirectAttributes){
         long bookId=Integer.parseInt(request.getParameter("bookId"));
         boolean retSucc=lendService.bookReturn(bookId);
         if (retSucc){
@@ -85,7 +85,19 @@ public class LendController {
             return "redirect:/allbooks1.html";
         }
     }
-
+    @RequestMapping("/returnbook.html")
+    public String bookReturn(HttpServletRequest request,RedirectAttributes redirectAttributes){
+        long bookId=Integer.parseInt(request.getParameter("bookId"));
+        boolean retSucc=lendService.bookReturn(bookId);
+        if (retSucc){
+            redirectAttributes.addFlashAttribute("succ", "图书归还成功！");
+            return "redirect:/allbooks.html";
+        }
+        else {
+            redirectAttributes.addFlashAttribute("error", "图书归还失败！");
+            return "redirect:/allbooks.html";
+        }
+    }
 
     @RequestMapping("/lendlist.html")
     public ModelAndView lendList(){
