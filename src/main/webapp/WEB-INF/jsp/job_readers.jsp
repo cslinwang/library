@@ -1,25 +1,23 @@
-<%@ page import="com.book.domain.Book" %><%--
-  Created by IntelliJ IDEA.
-  User: 君行天下
-  Date: 2017/7/24
-  Time: 19:25
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>全部图书信息</title>
+    <title>全部读者</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/jquery-3.2.1.js"></script>
-    <script src="js/bootstrap.min.js" ></script>
+    <script src="js/bootstrap.min.js"></script>
     <style>
-        body{
-            background-color: rgb(240,242,245);
+        body {
+            background-color: rgb(240, 242, 245);
         }
     </style>
+
 </head>
 <body>
+<c:if test="${!empty info}">
+    <script>alert("${info}");
+    window.location.href = "allreaders.html"</script>
+</c:if>
 <nav class="navbar navbar-default" role="navigation" style="background-color:#fff" style="background-color:#fff">
     <div class="container-fluid">
         <div class="navbar-header" style="margin-left: 8%;margin-right: 1%">
@@ -74,83 +72,62 @@
         </div>
     </div>
 </nav>
-
-
-<div style="padding: 70px 550px 10px">
-
-    <script>
-        function mySubmit(flag){
-            return flag;
-        }
-        $("#searchform").submit(function () {
-            var val=$("#search").val();
-            if(val==''){
-                alert("请输入关键字");
-                return mySubmit(false);
-            }
-        })
-    </script>
+<div style="position: relative;top: 15%">
+    <c:if test="${!empty succ}">
+        <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert"
+                    aria-hidden="true">
+                &times;
+            </button>
+                ${succ}
+        </div>
+    </c:if>
+    <c:if test="${!empty error}">
+        <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert"
+                    aria-hidden="true">
+                &times;
+            </button>
+                ${error}
+        </div>
+    </c:if>
 </div>
-<div style="position: relative;top: 10%">
-<c:if test="${!empty succ}">
-    <div class="alert alert-success alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert"
-                aria-hidden="true">
-            &times;
-        </button>
-        ${succ}
-    </div>
-</c:if>
-<c:if test="${!empty error}">
-    <div class="alert alert-danger alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert"
-                aria-hidden="true">
-            &times;
-        </button>
-        ${error}
-    </div>
-</c:if>
-</div>
-<div class="panel panel-default" style="width: 90%;margin-left: 5%">
-    <div class="panel-heading" style="background-color: #fff">
+
+
+<div class="panel panel-default" style="position:relative;top: 80px;width: 90%;margin-left: 5%">
+    <div class="panel-heading">
         <h3 class="panel-title">
-            全部图书
+            全部读者
         </h3>
     </div>
     <div class="panel-body">
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>书名</th>
-                <th>作者</th>
-                <th>出版社</th>
-                <th>ISBN</th>
-                <th>价格</th>
-                <th>借还</th>
-                <th>详情</th>
+                <th>读者号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>生日</th>
+                <th>地址</th>
+                <th>电话</th>
+                <th>欠款</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${books}" var="book">
-            <tr>
-                <td><c:out value="${book.name}"></c:out></td>
-                <td><c:out value="${book.author}"></c:out></td>
-                <td><c:out value="${book.publish}"></c:out></td>
-                <td><c:out value="${book.isbn}"></c:out></td>
-                <td><c:out value="${book.price}"></c:out></td>
-                <c:if test="${book.state==1}">
-                    <td><a href="lendbook1.html?bookId=<c:out value="${book.bookId}"></c:out>"><button type="button" class="btn btn-primary btn-xs">借阅</button></a></td>
-                </c:if>
-                <c:if test="${book.state==0}">
-                    <td><a href="returnbook1.html?bookId=<c:out value="${book.bookId}"></c:out>"><button type="button" class="btn btn-primary btn-xs">归还</button></a></td>
-                </c:if>
-                <td><a href="bookdetail1.html?bookId=<c:out value="${book.bookId}"></c:out>"><button type="button" class="btn btn-success btn-xs">详情</button></a></td>
-            </tr>
+            <c:forEach items="${readers}" var="reader">
+                <tr>
+                    <td><c:out value="${reader.readerId}"></c:out></td>
+                    <td><c:out value="${reader.name}"></c:out></td>
+                    <td><c:out value="${reader.sex}"></c:out></td>
+                    <td><c:out value="${reader.birth}"></c:out></td>
+                    <td><c:out value="${reader.address}"></c:out></td>
+                    <td><c:out value="${reader.telcode}"></c:out></td>
+                    <td>0</td>
+                </tr>
             </c:forEach>
             </tbody>
         </table>
     </div>
 </div>
-
 </body>
 </html>

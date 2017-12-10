@@ -20,12 +20,12 @@
 
 </head>
 <body>
-<nav  style="position:fixed;z-index: 999;width: 100%;background-color: #fff" class="navbar navbar-default" role="navigation" >
+<nav class="navbar navbar-default" role="navigation" style="background-color:#fff" style="background-color:#fff">
     <div class="container-fluid">
         <div class="navbar-header" style="margin-left: 8%;margin-right: 1%">
             <a class="navbar-brand" href="job_main.html">图书管理系统</a>
         </div>
-        <div class="collapse navbar-collapse" >
+        <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -35,27 +35,19 @@
                     <ul class="dropdown-menu">
                         <li><a href="allbooks1.html">全部图书</a></li>
                         <li class="divider"></li>
-                        <li><a href="book_add.html">增加图书</a></li>
+
                     </ul>
                 </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         读者管理
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="allreaders.html">全部读者</a></li>
+                        <li><a href="allreaders1.html">查询欠款</a></li>
                         <li class="divider"></li>
-                        <li><a href="reader_add.html">增加读者</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        借还管理
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="lendlist.html">借还日志</a></li><li><a href="lendlistcount.html">统计借阅</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -64,55 +56,58 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="alljgs.html">荐购列表</a></li>
+                        <li><a href="alljgs.html">查询荐购</a></li>
                     </ul>
                 </li>
-                <li >
-                    <a href="admin_repasswd.html" >
+                <li>
+                    <a href="admin_repasswd.html">
                         密码修改
                     </a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>&nbsp;${job.jobId}，已登录</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>&nbsp;${job.jobId}，已登录</a>
+                </li>
                 <li><a href="logout.html"><span class="glyphicon glyphicon-log-in"></span>&nbsp;退出</a></li>
             </ul>
+
         </div>
     </div>
 </nav>
 
-<div class="col-xs-6 col-md-offset-3" style="position: relative;top: 25%">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">借阅《 ${book.name}》</h3>
-        </div>
-        <div class="panel-body">
-            <form action="lendbookdo1.html?id=${book.bookId}" method="post" id="lendbook" >
-                <div class="input-group">
-                    <span  class="input-group-addon">书名</span>
-                    <input type="text" readonly="readonly" class="form-control" name="name" id="name" value="${book.name}">
-                </div>
-                <br/>
-                <div class="input-group">
-                    <span class="input-group-addon">读者证号</span>
-                    <input type="text" class="form-control" name="readerId" id="readerId" placeholder="借阅人读者证号" >
-                </div>
-                <br/>
-                <input type="submit" value="确定" class="btn btn-success btn-sm" class="text-left">
-                <script>
-                    function mySubmit(flag){
-                        return flag;
-                    }
-                    $("#lendbook").submit(function () {
-                        if($("#name").val()==''||$("#readerId").val()==''){
-                            alert("请填入完整图书信息！");
-                            return mySubmit(false);
+
+    <div class="col-xs-6 col-md-offset-3" style="position: relative;top: 25%">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">借阅《 ${book.name}》</h3>
+            </div>
+            <div class="panel-body">
+                <form action="lendbookdo1.html?id=${book.bookId}" method="post" id="lendbook" >
+                    <div class="input-group">
+                        <span  class="input-group-addon">书名</span>
+                        <input type="text" readonly="readonly" class="form-control" name="name" id="name" value="${book.name}">
+                    </div>
+                    <br/>
+                    <div class="input-group">
+                        <span class="input-group-addon">读者证号</span>
+                        <input type="text" class="form-control" name="readerId" id="readerId" placeholder="借阅人读者证号" >
+                    </div>
+                    <br/>
+                    <input type="submit" value="确定" class="btn btn-success btn-sm" class="text-left">
+                    <script>
+                        function mySubmit(flag){
+                            return flag;
                         }
-                    })
-                </script>
-            </form>
+                        $("#lendbook").submit(function () {
+                            if($("#name").val()==''||$("#readerId").val()==''){
+                                alert("请填入完整图书信息！");
+                                return mySubmit(false);
+                            }
+                        })
+                    </script>
+                </form>
+            </div>
         </div>
-    </div>
 
 </div>
 

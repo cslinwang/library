@@ -37,7 +37,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="allbooks.html">全部图书</a></li>
                         <li class="divider"></li>
-                        <li><a href="book_add.html">增加图书</a></li>
+                        <li><a href="book_add.html">录入图书</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -76,14 +76,7 @@
 
 
 <div style="padding: 70px 550px 10px">
-    <form   method="post" action="querybook.html" class="form-inline"  id="searchform">
-        <div class="input-group">
-            <input type="text" placeholder="输入图书名" class="form-control" id="search" name="searchWord" class="form-control">
-            <span class="input-group-btn">
-                            <input type="submit" value="搜索" class="btn btn-default">
-            </span>
-        </div>
-    </form>
+
     <script>
         function mySubmit(flag){
             return flag;

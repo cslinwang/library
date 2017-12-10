@@ -46,6 +46,13 @@ public class ReaderController {
         modelAndView.addObject("readers",readers);
         return modelAndView;
     }
+    @RequestMapping("allreaders1.html")
+    public ModelAndView allBooks1(){
+        ArrayList<ReaderInfo> readers=readerInfoService.readerInfos();
+        ModelAndView modelAndView=new ModelAndView("job_readers");
+        modelAndView.addObject("readers",readers);
+        return modelAndView;
+    }
 
     @RequestMapping("reader_delete.html")
     public String readerDelete(HttpServletRequest request,RedirectAttributes redirectAttributes){

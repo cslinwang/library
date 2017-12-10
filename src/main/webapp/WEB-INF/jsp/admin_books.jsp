@@ -36,7 +36,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="allbooks.html">全部图书</a></li>
                         <li class="divider"></li>
-                        <li><a href="book_add.html">增加图书</a></li>
+                        <li><a href="book_add.html">录入图书</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -119,7 +119,7 @@
 <div class="panel panel-default" style="width: 90%;margin-left: 5%">
     <div class="panel-heading" style="background-color: #fff">
         <h3 class="panel-title">
-            全部图书
+            统计图书
         </h3>
     </div>
     <div class="panel-body">

@@ -111,6 +111,10 @@
                     <th>电话</th>
                     <td>${readerinfo.telcode}</td>
                 </tr>
+                <tr>
+                    <th>欠款金额</th>
+                    <td>0</td>
+                </tr>
                 </tbody>
             </table>
         </div>

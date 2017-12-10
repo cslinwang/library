@@ -96,10 +96,10 @@
             <thead>
             <tr>
                 <th>图书号</th>
-                <th>图书名</th>
                 <th>借出日期</th>
                 <th>归还日期</th>
                 <th>状态</th>
+                <th>续借</th>
             </tr>
             </thead>
             <tbody>
@@ -117,6 +117,7 @@
                     <c:if test="">
                         <td>超期</td>
                     </c:if>
+                    <td> <button type="button" class="btn btn-primary btn-xs">续借</button></td>
                 </tr>
             </c:forEach>
             </tbody>
