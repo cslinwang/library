@@ -1,14 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
   User: 君行天下
-  Date: 2017/7/30
-  Time: 18:52
+  Date: 2017/7/31
+  Time: 8:09
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>${job.jobId}的主页</title>
+    <title>借阅《 ${book.name}》</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/bootstrap.min.js" ></script>
@@ -17,10 +17,10 @@
             background-color: rgb(240,242,245);
         }
     </style>
+
 </head>
 <body>
-<body>
-<nav class="navbar navbar-default" role="navigation" style="background-color:#fff" style="background-color:#fff">
+<nav  style="position:fixed;z-index: 999;width: 100%;background-color: #fff" class="navbar navbar-default" role="navigation" >
     <div class="container-fluid">
         <div class="navbar-header" style="margin-left: 8%;margin-right: 1%">
             <a class="navbar-brand" href="job_main.html">图书管理系统</a>
@@ -72,6 +72,40 @@
     </div>
 </nav>
 
+<div class="col-xs-6 col-md-offset-3" style="position: relative;top: 25%">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">借阅《 ${book.name}》</h3>
+        </div>
+        <div class="panel-body">
+            <form action="lendbookdo1.html?id=${book.bookId}" method="post" id="lendbook" >
+                <div class="input-group">
+                    <span  class="input-group-addon">书名</span>
+                    <input type="text" readonly="readonly" class="form-control" name="name" id="name" value="${book.name}">
+                </div>
+                <br/>
+                <div class="input-group">
+                    <span class="input-group-addon">读者证号</span>
+                    <input type="text" class="form-control" name="readerId" id="readerId" placeholder="借阅人读者证号" >
+                </div>
+                <br/>
+                <input type="submit" value="确定" class="btn btn-success btn-sm" class="text-left">
+                <script>
+                    function mySubmit(flag){
+                        return flag;
+                    }
+                    $("#lendbook").submit(function () {
+                        if($("#name").val()==''||$("#readerId").val()==''){
+                            alert("请填入完整图书信息！");
+                            return mySubmit(false);
+                        }
+                    })
+                </script>
+            </form>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>

@@ -34,6 +34,14 @@ public class LendController {
        modelAndView.addObject("book",book);
        return modelAndView;
     }
+    @RequestMapping("/lendbook1.html")
+    public ModelAndView bookLend1(HttpServletRequest request){
+        long bookId=Integer.parseInt(request.getParameter("bookId"));
+        Book book=bookService.getBook(bookId);
+        ModelAndView modelAndView=new ModelAndView("job_book_lend");
+        modelAndView.addObject("book",book);
+        return modelAndView;
+    }
 
     @RequestMapping("/lendbookdo.html")
     public String bookLendDo(HttpServletRequest request,RedirectAttributes redirectAttributes,int readerId){
@@ -49,18 +57,32 @@ public class LendController {
 
 
     }
+    @RequestMapping("/lendbookdo1.html")
+    public String bookLendDo1(HttpServletRequest request,RedirectAttributes redirectAttributes,int readerId){
+        long bookId=Integer.parseInt(request.getParameter("id"));
+        boolean lendsucc=lendService.bookLend(bookId,readerId);
+        if (lendsucc){
+            redirectAttributes.addFlashAttribute("succ", "图书借阅成功！");
+            return "redirect:/allbooks1.html";
+        }else {
+            redirectAttributes.addFlashAttribute("succ", "图书借阅成功！");
+            return "redirect:/allbooks1.html";
+        }
 
-    @RequestMapping("/returnbook.html")
+
+    }
+
+    @RequestMapping("/returnbook1.html")
     public String bookReturn(HttpServletRequest request,RedirectAttributes redirectAttributes){
         long bookId=Integer.parseInt(request.getParameter("bookId"));
         boolean retSucc=lendService.bookReturn(bookId);
         if (retSucc){
             redirectAttributes.addFlashAttribute("succ", "图书归还成功！");
-            return "redirect:/allbooks.html";
+            return "redirect:/allbooks1.html";
         }
         else {
             redirectAttributes.addFlashAttribute("error", "图书归还失败！");
-            return "redirect:/allbooks.html";
+            return "redirect:/allbooks1.html";
         }
     }
 

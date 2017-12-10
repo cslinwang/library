@@ -91,6 +91,7 @@
             <thead>
             <tr>
                 <th>图书号</th>
+                <th>图书名</th>
                 <th>借出日期</th>
                 <th>归还日期</th>
                 <th>状态</th>

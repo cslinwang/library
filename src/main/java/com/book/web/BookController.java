@@ -62,6 +62,14 @@ public class BookController {
         modelAndView.addObject("books",books);
         return modelAndView;
     }
+    @RequestMapping("/allbooks1.html")
+    public ModelAndView allBook1(){
+        ArrayList<Book> books=bookService.getAllBooks();
+        ModelAndView modelAndView=new ModelAndView("job_books");
+        modelAndView.addObject("count",books.size());
+        modelAndView.addObject("books",books);
+        return modelAndView;
+    }
     @RequestMapping("/deletebook.html")
     public String deleteBook(HttpServletRequest request,RedirectAttributes redirectAttributes){
         long bookId=Integer.parseInt(request.getParameter("bookId"));
@@ -156,6 +164,14 @@ public class BookController {
         long bookId=Integer.parseInt(request.getParameter("bookId"));
         Book book=bookService.getBook(bookId);
         ModelAndView modelAndView=new ModelAndView("admin_book_detail");
+        modelAndView.addObject("detail",book);
+        return modelAndView;
+    }
+    @RequestMapping("/bookdetail1.html")
+    public ModelAndView bookDetail1(HttpServletRequest request){
+        long bookId=Integer.parseInt(request.getParameter("bookId"));
+        Book book=bookService.getBook(bookId);
+        ModelAndView modelAndView=new ModelAndView("job_book_detail");
         modelAndView.addObject("detail",book);
         return modelAndView;
     }
