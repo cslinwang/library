@@ -299,8 +299,15 @@
                             }
                             $("#info").text("提示:登陆成功，跳转中...");
                             window.location.href="/reader_main.html";
-
-
+                        }
+                        else if(data.stateCode.trim() == "3"){
+                            if(remember){
+                                rememberLogin(id,passwd,remember);
+                            }else {
+                                Cookies.remove('loginStatus');
+                            }
+                            $("#info").text("提示:登陆成功，跳转中...");
+                            window.location.href="/job_main.html";
                         }
                     }
                 });

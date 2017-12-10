@@ -1,23 +1,23 @@
 package com.book.domain;
 
-public class Admin {
+public class Job {
 
-    private int adminId;
+    private int jobId;
     private String password;
 
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public void setAdminId(int adminId) {
-        this.adminId = adminId;
+    public void setJobId(int jobId) {
+        this.jobId = jobId;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public int getAdminId() {
-        return adminId;
+    public int getJobId() {
+        return jobId;
     }
 }

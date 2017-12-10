@@ -1,6 +1,7 @@
 package com.book.service;
 
 import com.book.dao.AdminDao;
+import com.book.dao.JobDao;
 import com.book.dao.ReaderCardDao;
 import com.book.dao.ReaderInfoDao;
 import com.book.domain.ReaderCard;
@@ -14,6 +15,7 @@ public class LoginService {
     private ReaderCardDao readerCardDao;
     private ReaderInfoDao readerInfoDao;
     private AdminDao adminDao;
+    private JobDao jobDao;
     @Autowired
     public void setReaderCardDao(ReaderCardDao readerCardDao) {
         this.readerCardDao = readerCardDao;
@@ -27,6 +29,11 @@ public class LoginService {
     @Autowired
     public void setAdminDao(AdminDao adminDao) {
         this.adminDao = adminDao;
+    }
+
+    @Autowired
+    public void setJobDao(JobDao jobDao) {
+        this.jobDao = jobDao;
     }
 
     public boolean hasMatchReader(int readerId,String passwd){
@@ -43,7 +50,6 @@ public class LoginService {
     public boolean hasMatchAdmin(int adminId,String password){
         return adminDao.getMatchCount(adminId,password)==1;
     }
-
     public boolean adminRePasswd(int adminId,String newPasswd){
         return adminDao.rePassword(adminId,newPasswd)>0;
     }
@@ -51,6 +57,13 @@ public class LoginService {
         return adminDao.getPasswd(id);
     }
 
-
-
+    public boolean hasMatchJob(int jobId,String password){
+        return jobDao.getMatchCount(jobId,password)==1;
+    }
+    public boolean jobRePasswd(int jobId,String newPasswd){
+        return jobDao.rePassword(jobId,newPasswd)>0;
+    }
+    public String getJobPasswd(int id){
+        return jobDao.getPasswd(id);
+    }
 }
