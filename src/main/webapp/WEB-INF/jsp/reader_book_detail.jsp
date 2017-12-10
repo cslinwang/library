@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-<nav class="navbar navbar-default" role="navigation" style="background-color:#fff">
+<nav class="navbar navbar-default" role="navigation" style="background-color:#fff" style="background-color:#fff">
     <div class="container-fluid">
         <div class="navbar-header" style="margin-left: 8%;margin-right: 1%">
             <a class="navbar-brand " href="reader_main.html"><p class="text-primary">我的图书馆</p></a>
@@ -33,6 +33,11 @@
                 <li >
                     <a href="mylend.html" >
                         我的借还
+                    </a>
+                </li>
+                <li >
+                    <a href="addjg.html" >
+                        添加荐购
                     </a>
                 </li>
                 <li >

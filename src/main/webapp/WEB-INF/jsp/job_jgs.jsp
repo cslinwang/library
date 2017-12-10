@@ -59,6 +59,15 @@
                         <li><a href="lendlist.html">借还日志</a></li><li><a href="lendlistcount.html">统计借阅</a></li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        荐购管理
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="alljgs.html">荐购列表</a></li>
+                    </ul>
+                </li>
                 <li >
                     <a href="admin_repasswd.html" >
                         密码修改
@@ -74,28 +83,7 @@
 </nav>
 
 
-<div style="padding: 70px 550px 10px">
-    <form   method="post" action="querybook.html" class="form-inline"  id="searchform">
-        <div class="input-group">
-           <input type="text" placeholder="输入图书名" class="form-control" id="search" name="searchWord" class="form-control">
-            <span class="input-group-btn">
-                            <input type="submit" value="搜索" class="btn btn-default">
-            </span>
-        </div>
-    </form>
-    <script>
-        function mySubmit(flag){
-            return flag;
-        }
-        $("#searchform").submit(function () {
-            var val=$("#search").val();
-            if(val==''){
-                alert("请输入关键字");
-                return mySubmit(false);
-            }
-        })
-    </script>
-</div>
+
 <div style="position: relative;top: 10%">
 <c:if test="${!empty succ}">
     <div class="alert alert-success alert-dismissable">

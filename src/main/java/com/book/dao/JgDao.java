@@ -41,4 +41,18 @@ public class JgDao {
         return jgs;
     }
 
+    public void jgState(int jgState,int jgId) {
+
+        String sql = "UPDATE jg set jg_state = ? where jg_id = ? ";
+        jdbcTemplate.update(sql, new Object[]{jgState,jgId});
+
+    }
+    public void jgAdd(Jg jg) {
+        ArrayList<Jg> list=getAllJgs();
+        int id = list.get(list.size()-1).getJgId()+1;
+        String sql = "INSERT INTO jg VALUES(?,?,?,?) ";
+        jdbcTemplate.update(sql, new Object[]{id,jg.getJgName(),jg.getJgReason(),0});
+
+    }
+
 }

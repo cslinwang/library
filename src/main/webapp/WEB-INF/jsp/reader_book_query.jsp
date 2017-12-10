@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default" role="navigation" style="background-color:#fff">
+<nav class="navbar navbar-default" role="navigation" style="background-color:#fff" style="background-color:#fff">
     <div class="container-fluid">
         <div class="navbar-header" style="margin-left: 8%;margin-right: 1%">
             <a class="navbar-brand " href="reader_main.html"><p class="text-primary">我的图书馆</p></a>
@@ -44,6 +44,11 @@
                     </a>
                 </li>
                 <li >
+                    <a href="addjg.html" >
+                        添加荐购
+                    </a>
+                </li>
+                <li >
                     <a href="reader_repasswd.html" >
                         密码修改
                     </a>
@@ -56,7 +61,6 @@
         </div>
     </div>
 </nav>
-
 
 <div style="padding: 30px 550px 10px">
     <form   method="post" action="reader_querybook_do.html" class="form-inline"  id="searchform">
